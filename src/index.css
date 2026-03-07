@@ -1,0 +1,130 @@
+@import "tailwindcss";
+
+:root {
+  --bg-main: #f4f7f5;
+  --bg-panel: #ffffff;
+  --bg-accent: #e4efe9;
+  --line: #d2ddd8;
+  --text-main: #112019;
+  --text-muted: #4d6258;
+  --brand: #1f7a55;
+  --brand-strong: #176344;
+  --danger: #9b2f35;
+  font-family: 'Manrope', sans-serif;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+  color: var(--text-main);
+  background:
+    radial-gradient(circle at 10% -10%, #d8e9df 0%, transparent 40%),
+    radial-gradient(circle at 90% 120%, #dfece7 0%, transparent 38%),
+    linear-gradient(180deg, #f8fbf9 0%, #eef5f1 100%);
+}
+
+@layer components {
+  .ovr-card {
+    border: 1px solid var(--line);
+    border-radius: 18px;
+    background: linear-gradient(180deg, #ffffff 0%, #fbfdfc 100%);
+    box-shadow: 0 12px 30px rgba(21, 42, 32, 0.07);
+  }
+
+  .ovr-title {
+    font-size: 1.4rem;
+    font-weight: 800;
+    letter-spacing: -0.01em;
+    color: var(--text-main);
+  }
+
+  .ovr-subtle {
+    color: var(--text-muted);
+    font-size: 0.92rem;
+  }
+
+  .ovr-input {
+    width: 100%;
+    border: 1px solid var(--line);
+    background-color: #ffffff;
+    border-radius: 12px;
+    padding: 0.62rem 0.72rem;
+    font-size: 0.94rem;
+    transition: border-color 120ms ease;
+  }
+
+  .ovr-input:focus {
+    outline: none;
+    border-color: #94b6a8;
+  }
+
+  .ovr-button {
+    border: 0;
+    border-radius: 12px;
+    background: var(--brand);
+    color: #f5fbf7;
+    font-weight: 700;
+    padding: 0.6rem 0.95rem;
+    cursor: pointer;
+    transition: background-color 120ms ease;
+  }
+
+  .ovr-button:hover {
+    background: var(--brand-strong);
+  }
+
+  .ovr-button:disabled {
+    cursor: not-allowed;
+    opacity: 0.65;
+  }
+
+  .ovr-button-muted {
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    background: #f8fbf9;
+    color: var(--text-main);
+    font-weight: 600;
+    padding: 0.56rem 0.9rem;
+    cursor: pointer;
+  }
+
+  .ovr-danger {
+    color: var(--danger);
+    border-color: #e8c0c3;
+    background: #fff6f6;
+  }
+
+  .ovr-table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+
+  .ovr-table th {
+    text-align: left;
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: var(--text-muted);
+    padding: 0.8rem 0.5rem;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .ovr-table td {
+    font-size: 0.9rem;
+    padding: 0.8rem 0.5rem;
+    border-bottom: 1px solid #eaf0ec;
+    vertical-align: top;
+  }
+}
